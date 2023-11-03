@@ -12,7 +12,7 @@ image=$(echo $full_string | cut -d '/' -f 2 | cut -d ':' -f 1)
 # Extract tag
 tag=$(echo $full_string | cut -d ':' -f 2)
 
-# usage: bash util_scripts/create_sqsh.sh <user>/<image>:<tag>
+# usage: bash slurm_utils/create_sqsh.sh <user>/<image>:<tag>
 output="/home/jasonxie/containers/${user}+${image}+${tag}.sqsh"
 
 echo "Creating container image at ${output}"
