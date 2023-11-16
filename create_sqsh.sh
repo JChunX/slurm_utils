@@ -22,4 +22,6 @@ if [ -f "$output" ]; then
     rm "$output"
 fi
 
-srun enroot import -o ${output} docker://${full_string}
+echo "Importing container image from docker://${full_string} to ${output}"
+
+srun --mem-per-gpu=10G --cpus-per-gpu=4 --gpus=1 enroot import -o ${output} docker://${full_string}
